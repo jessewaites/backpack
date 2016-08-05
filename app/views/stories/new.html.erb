@@ -1,0 +1,20 @@
+<h1>New Story</h1>
+
+<!-- <%= render 'form' %> -->
+
+<div id="editor">
+</div>
+
+<%= link_to 'Back', stories_path %>
+
+<script type="text/javascript">
+    editor = new Dante.Editor(
+      {
+        el: "#editor",
+        upload_url: "/images.json", //it expect an url string in response like /your/server/image.jpg or http://app.com/images/image.jpg
+        store_url: "/story" //post to save
+
+      }
+    );
+    editor.start()
+  </script>
